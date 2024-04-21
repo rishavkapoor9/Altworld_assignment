@@ -41,7 +41,7 @@ const Result = () => {
             // Fetch data based on contextData
             fetchData(assId, userId);
         }
-    }, [userId]);
+    }, [userId, assId]);
     const fetchData = async (ass: String, user: number) => {
         try {
             // Fetch data using contextData
@@ -75,7 +75,7 @@ const Result = () => {
                 <div>
                     <div className='flex justify-between items-center'>
                         <div className='flex items-center mr-12'>
-                            <img src={img} className='h-16 w-16 rounded-lg mr-6'></img>
+                            <img src={img} className='h-16 w-16 rounded-lg mr-6' alt="user"></img>
                             <div className='block'>
                                 <p className=' text-slate-800 font-bold text-sm'>{candidate.full_name}</p>
                                 <p className='text-xs text-slate-500'>{candidate.email}</p>

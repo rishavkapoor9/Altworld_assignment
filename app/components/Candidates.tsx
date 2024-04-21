@@ -42,7 +42,7 @@ const Candidates : React.FC<Candidate> = ({rev,short,assign}) => {
                     {status==1?rev.map((candidate: any) =>
                         <div className={selected==candidate.id?'flex justify-between p-3 rounded-md items-center  cursor-pointer bg-slate-200':'flex justify-between p-3 rounded-md items-center  cursor-pointer'} onClick={()=>clicked(assign,candidate.id)} key={candidate.id}>
                             <div className='flex items-center'>
-                                <img className='h-10 w-10 rounded-md mr-2' src={img} />
+                                <img className='h-10 w-10 rounded-md mr-2' src={img} alt="user" />
                                 <div className='block'>
                                 <p className=' text-slate-800 font-bold text-sm'>{candidate.full_name}</p>
                                 <p className='text-xs text-slate-500'>{candidate.email}</p>
@@ -57,7 +57,7 @@ const Candidates : React.FC<Candidate> = ({rev,short,assign}) => {
                     short.map((candidate: any) =>
                         <div className={selected==candidate.id?'flex justify-between p-3 rounded-md items-center  cursor-pointer bg-slate-200':'flex justify-between p-3 rounded-md items-center  cursor-pointer'} onClick={()=>clicked(assign,candidate.id)} key={candidate.id}>
                             <div className='flex items-center'>
-                                <img className='h-10 w-10 rounded-md mr-2' src={img} />
+                                <img className='h-10 w-10 rounded-md mr-2' src={img} alt="user"/>
                                 <div className='block'>
                                 <p className=' text-slate-800 font-bold text-sm'>{candidate.full_name}</p>
                                 <p className='text-xs text-slate-500'>{candidate.email}</p>
