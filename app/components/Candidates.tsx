@@ -2,10 +2,17 @@
 import React, { useState } from 'react'
 import { useGlobalContext } from '../Context/context';
 
+interface YourCandidateType {
+    id: number;
+    full_name: String;
+    email: String;
+    score: number;
+}
+
 interface Candidate {
-    rev: any;
-    short: any; // Update the type if needed
-    assign: any; // Update the type if needed
+    rev: YourCandidateType[]; 
+    short: YourCandidateType[]; 
+    assign: any; 
 }
 
 const Candidates : React.FC<Candidate> = ({rev,short,assign}) => {
@@ -33,7 +40,7 @@ const Candidates : React.FC<Candidate> = ({rev,short,assign}) => {
 
                     </div>
                     {status==1?rev.map((candidate: any) =>
-                        <div key={candidate._id} className={selected==candidate.id?'flex justify-between p-3 rounded-md items-center  cursor-pointer bg-slate-200':'flex justify-between p-3 rounded-md items-center  cursor-pointer'} onClick={()=>clicked(assign,candidate.id)} key={candidate.id}>
+                        <div className={selected==candidate.id?'flex justify-between p-3 rounded-md items-center  cursor-pointer bg-slate-200':'flex justify-between p-3 rounded-md items-center  cursor-pointer'} onClick={()=>clicked(assign,candidate.id)} key={candidate.id}>
                             <div className='flex items-center'>
                                 <img className='h-10 w-10 rounded-md mr-2' src={img} />
                                 <div className='block'>
@@ -48,7 +55,7 @@ const Candidates : React.FC<Candidate> = ({rev,short,assign}) => {
                         </div>
                     ):
                     short.map((candidate: any) =>
-                        <div key={candidate._id} className={selected==candidate.id?'flex justify-between p-3 rounded-md items-center  cursor-pointer bg-slate-200':'flex justify-between p-3 rounded-md items-center  cursor-pointer'} onClick={()=>clicked(assign,candidate.id)} key={candidate.id}>
+                        <div className={selected==candidate.id?'flex justify-between p-3 rounded-md items-center  cursor-pointer bg-slate-200':'flex justify-between p-3 rounded-md items-center  cursor-pointer'} onClick={()=>clicked(assign,candidate.id)} key={candidate.id}>
                             <div className='flex items-center'>
                                 <img className='h-10 w-10 rounded-md mr-2' src={img} />
                                 <div className='block'>

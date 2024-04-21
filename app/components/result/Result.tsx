@@ -87,8 +87,8 @@ const Result = () => {
 
                     </div>
                     <div className='mt-6 text-sm'>
-                        {candidate.scores.map((score: any,key: Number) =>
-                            <div key={key} className='flex items-center justify-between'>
+                        {candidate.scores.map((score: any) =>
+                            <div key={score.score_type} className='flex items-center justify-between'>
                                 <p className='text-slate-500 text-xs font-bold'>{score.score_type}</p>
                                 <div className='flex'>
                                     {/* <ProgressBar
