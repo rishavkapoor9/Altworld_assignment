@@ -2,7 +2,13 @@
 import React, { useState } from 'react'
 import { useGlobalContext } from '../Context/context';
 
-const Candidates = ({rev,short,assign}) => {
+interface Candidate {
+    rev: any;
+    short: any; // Update the type if needed
+    assign: any; // Update the type if needed
+}
+
+const Candidates : React.FC<Candidate> = ({rev,short,assign}) => {
     const {assId, setAssId, userId, setUserId} = useGlobalContext();
     const [status, setStatus] = useState(1)
     const [selected, setSelected] = useState()
@@ -26,7 +32,7 @@ const Candidates = ({rev,short,assign}) => {
                         <p className='text-xs text-slate-500'>CANDIDATE</p><p className='text-xs text-slate-500 mr-2'>SCORE</p>
 
                     </div>
-                    {status==1?rev.map(candidate =>
+                    {status==1?rev.map((candidate: any) =>
                         <div className={selected==candidate.id?'flex justify-between p-3 rounded-md items-center  cursor-pointer bg-slate-200':'flex justify-between p-3 rounded-md items-center  cursor-pointer'} onClick={()=>clicked(assign,candidate.id)} key={candidate.id}>
                             <div className='flex items-center'>
                                 <img className='h-10 w-10 rounded-md mr-2' src={img} />
@@ -41,7 +47,7 @@ const Candidates = ({rev,short,assign}) => {
 
                         </div>
                     ):
-                    short.map(candidate =>
+                    short.map((candidate: any) =>
                         <div className={selected==candidate.id?'flex justify-between p-3 rounded-md items-center  cursor-pointer bg-slate-200':'flex justify-between p-3 rounded-md items-center  cursor-pointer'} onClick={()=>clicked(assign,candidate.id)} key={candidate.id}>
                             <div className='flex items-center'>
                                 <img className='h-10 w-10 rounded-md mr-2' src={img} />

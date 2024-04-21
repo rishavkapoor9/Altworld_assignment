@@ -25,6 +25,10 @@ interface Candidate {
         }
     ]
 }
+// interface Data {
+//     ass: any;
+//     user: any ;// Update the type if needed
+// }
 
 
 const Result = () => {
@@ -38,7 +42,7 @@ const Result = () => {
             fetchData(assId, userId);
         }
     }, [userId]);
-    const fetchData = async (ass, user) => {
+    const fetchData = async (ass: String, user: number) => {
         try {
             // Fetch data using contextData
             const response = await fetch(`https://qyzlgjq37b.execute-api.ap-south-1.amazonaws.com/dev/candidate_assignment_data?user_id=${user}&assignment_id=${ass}`, { cache: 'no-store' });
