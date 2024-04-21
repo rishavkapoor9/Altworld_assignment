@@ -47,7 +47,7 @@ const Result = () => {
             // Fetch data using contextData
             const response = await fetch(`https://qyzlgjq37b.execute-api.ap-south-1.amazonaws.com/dev/candidate_assignment_data?user_id=${user}&assignment_id=${ass}`, { cache: 'no-store' });
             const data = await response.json();
-            setCandidate(data)
+            setCandidate(data as Candidate)
             // Do something with the fetched data
         } catch (error) {
             console.error('Error fetching data:', error);
