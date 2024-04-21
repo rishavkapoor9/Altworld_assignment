@@ -34,7 +34,7 @@ interface Candidate {
 const Result = () => {
     const { assId, setAssId, userId, setUserId } = useGlobalContext();
     // let candidate={};
-    const [candidate, setCandidate] = useState('')
+    const [candidate, setCandidate] = useState<Candidate | null>(null)
 
     useEffect(() => {
         if (assId) {
