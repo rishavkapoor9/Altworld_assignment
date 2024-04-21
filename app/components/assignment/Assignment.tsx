@@ -21,7 +21,7 @@ interface Candidate {
 const Assignment = async () => {
     const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     const data = await fetch("https://qyzlgjq37b.execute-api.ap-south-1.amazonaws.com/dev/assignment_details");
-    const assignment: Assignment[] = await data.json();
+    const assignment: Assignment = await data.json();
     const review = await fetch("https://qyzlgjq37b.execute-api.ap-south-1.amazonaws.com/dev/assignment_candidates?status=review&limit=6&offset=0")
     const shortlisted = await fetch("https://qyzlgjq37b.execute-api.ap-south-1.amazonaws.com/dev/assignment_candidates?status=shortlisted&limit=6&offset=0")
     const rev: Candidate[] = await review.json();
